@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "angularshopapp-9b952": {
+      "hosting": {
+        "shoppingCart": [
+          "angularshopapp-9b952"
+        ]
+      }
+    }
+  }
+}
