@@ -1,0 +1,15 @@
+.card-content {
+    display: flex;
+    justify-content: center;
+
+    img {
+        max-width: 25%;   
+        height: auto;;
+    }
+
+    p {
+        padding: 0;
+        display: flex;
+        justify-content: center;
+    }
+}

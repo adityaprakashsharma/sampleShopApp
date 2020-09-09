@@ -9,7 +9,7 @@ import { retry, catchError, tap } from 'rxjs/operators';
 })
 export class ApiService {
 
-  private SERVER_URL = "http://localhost:3000/products";
+  private SERVER_URL = "https://fakestoreapi.com/products/";
   public first: string = "";  
   public prev: string = "";  
   public next: string = "";  
