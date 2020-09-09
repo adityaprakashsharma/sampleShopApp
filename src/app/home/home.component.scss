@@ -3,13 +3,27 @@
     justify-content: center;
 
     img {
-        max-width: 25%;   
-        height: auto;;
+        width: 15%;   
+        height: auto;
+        margin: 8px;
+        padding: 16px;
     }
 
-    p {
-        padding: 0;
-        display: flex;
-        justify-content: center;
+    .card-content-text {
+        margin: 8px;
+        padding: 16px;
+        text-align: justify;
+    }
+
+
+}
+
+.card-content-action-btn {
+    text-align: end;
+    margin: 8px;
+    padding: 16px;
+
+    button {
+        border: 1px solid blue;
     }
 }
