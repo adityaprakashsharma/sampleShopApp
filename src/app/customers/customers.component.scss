@@ -3,6 +3,18 @@
     display: flex;
     justify-content: center;
     padding: 8px;
+    position: relative;
+    @media screen and (max-width: 435px) {
+            justify-content: inherit;
+    }
+    &::after {
+        position: absolute;
+        content: "User Details";
+        z-index: 666;
+        background: #f8f8f8;
+        height: 16px;
+        padding: 8px 8px;
+    }
   
     .form-contianer {
         border: 1px solid #000;
@@ -11,6 +23,9 @@
         flex-direction: column;
         background-color: #f8f8f8;
         padding: 16px;
+
+
+
 
         .form-field {
             width: 320px;

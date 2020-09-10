@@ -8,7 +8,7 @@ import { Customer } from "./customer";
 })
 export class CustomersComponent implements OnInit {
 
-  model =  new Customer();
+  model =  new Customer("Mahesh","Suresh",9876543210,"adi@gm.com");
   submitted = false;
   constructor() { }
 
