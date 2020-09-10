@@ -1,1 +1,55 @@
-<p>customers works!</p>
+<div class="contianer">
+<form #customerForm="ngForm" (ngSubmit)="onSubmit()" [hidden]="submitted" class="form-contianer">
+    <div class="form-field">
+        <mat-form-field appearance="outline" >
+            <mat-label>First Name</mat-label>
+            <input matInput  #fname="ngModel" name="fname" [(ngModel)]="model.fname">
+        </mat-form-field>
+    
+    </div>
+    <div class="form-field">
+        <mat-form-field  appearance="outline" >
+            <mat-label>Last Name</mat-label>
+            <input matInput  [(ngModel)]="model.lname" #lname="ngModel" name="lname">
+        </mat-form-field>
+            
+    </div>
+    <div class="form-field">
+        <mat-form-field  appearance="outline" >
+            <mat-label>Mobile Nmber</mat-label>
+            <input matInput  required [(ngModel)]="model.cMobile" #cNumber="ngModel" name="cNumber">
+            <mat-icon matSuffix>phone</mat-icon>
+        </mat-form-field>
+            
+    </div>
+    <div class="form-field">
+        <mat-form-field  appearance="outline" >
+            <mat-label>Email</mat-label> 
+            <input matInput  required [(ngModel)]="model.cEmail"  #cEmail="ngModel" name="cEmail">
+        </mat-form-field>
+            
+    </div>
+    <div class="form-field form-field-btn">
+        <button type="submit" mat-raised-button class="form-btn form-btn-submit" [disabled]="!customerForm.form.valid">Submit</button>
+        <button type="button" mat-raised-button class="form-btn form-btn-new" (click)="newCustomer(customerForm); customerForm.reset()">New Hero</button>
+    </div>
+</form>
+
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">Name</div>
+    <div class="col-xs-9">{{ model.fname }} {{model.lname}}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Mobile Number</div>
+    <div class="col-xs-9">{{ model.cMobile }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Email</div>
+    <div class="col-xs-9">{{ model.cEmail }}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted=false">Edit</button>
+</div>
+</div>
