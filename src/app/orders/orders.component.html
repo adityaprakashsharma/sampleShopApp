@@ -1,32 +1,71 @@
 <div class="orders-container">
     <div [formGroup]='orderForm' class="form-container">
-        <div class="form-field">
-            <mat-form-field appearance="outline" >
-                <mat-label>Card Number</mat-label>
-                <input matInput formControlName ="cardNumber" required>
-            </mat-form-field>
+        <div formGroupName="cardDetail">
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Card Number</mat-label>
+                    <input matInput formControlName ="cardNumber" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Card Hold Name</mat-label>
+                    <input matInput formControlName ="cardHolderName" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Expiry Date</mat-label>
+                    <input matInput formControlName ="expiryDate" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Card CVV</mat-label>
+                    <input matInput formControlName ="cardPin" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </div>
         </div>
-        <div class="form-field">
-            <mat-form-field appearance="outline" >
-                <mat-label>Card Hold Name</mat-label>
-                <input matInput formControlName ="cardHolderName" required>
-            </mat-form-field>
-        </div>
-        <div class="form-field">
-            <mat-form-field appearance="outline" >
-                <mat-label>Expiry Date</mat-label>
-                <input matInput formControlName ="expiryDate" required>
-            </mat-form-field>
-        </div>
-        <div class="form-field">
-            <mat-form-field appearance="outline" >
-                <mat-label>Card CVV</mat-label>
-                <input matInput formControlName ="cardPin" required>
-            </mat-form-field>
+
+        
+        <mat-divider></mat-divider>
+        <div formGroupName="addressGroup" class="address-form-group" >
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>House No.</mat-label>
+                    <input matInput formControlName ="houseNumber" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName ="street" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>City</mat-label>
+                    <input matInput formControlName ="city" required>
+                </mat-form-field>
+            </div>
+            <div class="form-field">
+                <mat-form-field appearance="outline" >
+                    <mat-label>State</mat-label>
+                    <mat-select>
+                        <mat-option *ngFor="let state of states" [value]="state">
+                            {{state}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
         </div>
         <div class="form-field form-field-btn">
             <button type="submit" mat-raised-button class="form-btn form-btn-submit" (click)="payNow()" [disabled]="!orderForm.valid">Pay Now</button>
         </div>
+
     </div>
 </div>
 

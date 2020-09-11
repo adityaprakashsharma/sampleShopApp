@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
-import { Order } from './order'
+import { Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-orders',
@@ -10,13 +11,24 @@ import { Order } from './order'
 export class OrdersComponent implements OnInit {
   
   payNowSubmit = false;
+  states = ["Bihar","Assam","Delhi","Punjab","Kerela","Orissa"];
   constructor(private fb : FormBuilder) { }
 
   orderForm = this.fb.group({
-    cardHolderName: [''],
-    cardNumber: [''],
-    expiryDate : [''],
-    cardPin : ['']
+    cardDetail: this.fb.group ({
+      cardHolderName: ['', Validators.minLength(6)],
+      cardNumber: ['', Validators.minLength(16)],
+      expiryDate : [''],
+      cardPin : [''],
+    }),
+
+    addressGroup: this.fb.group ({
+      houseNumber:[''],
+      street: [''],
+      city:[],
+      state: ['Select']
+
+    })
   })
 
   ngOnInit(): void {
