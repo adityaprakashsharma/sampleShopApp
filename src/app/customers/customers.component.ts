@@ -22,8 +22,13 @@ export class CustomersComponent implements OnInit {
   }
 
   newCustomer(evt) {
-    console.log(evt)
-    this.model = new Customer("Mahesh","Suresh",9876543210,"adi@gm.com");
+    console.log(evt.controls)
+    let dataReceived  = evt.controls;
+    console.log("model Vlaue after ====> ",this.model)
+    this.model = new Customer(this.model.fname,this.model.lname,this.model.cMobile,this.model.cEmail);
+    this.model.fname = "Suzy"
+    console.log("model Vlaue after ====> ",this.model)
+   
   }
 
 }

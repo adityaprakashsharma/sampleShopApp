@@ -1,0 +1,50 @@
+.orders-container{
+    display: flex;
+    justify-content: center;
+    padding: 8px;
+    position: relative;
+    @media screen and (max-width: 425px) {
+            justify-content: inherit;
+    }
+    &::after {
+        position: absolute;
+        content: "Card Details";
+        z-index: 666;
+        background: #f8f8f8;
+        height: 16px;
+        padding: 8px 8px;
+        @media screen and (max-width: 425px) {
+            left: 50%;
+    }
+    }
+  
+    .form-container {
+        border: 1px solid #000;
+        margin: 16px;
+        display: flex;
+        flex-direction: column;
+        background-color: #f8f8f8;
+        padding: 16px;
+
+
+
+
+        .form-field {
+            width: 320px;
+            .mat-form-field {
+                width: 100%;
+            }
+
+            &.form-field-btn {
+                display: flex;
+                width: 100%;
+                justify-content: flex-end;
+            
+                .form-btn {
+                    width: 140px;
+                }
+            }
+        }
+    }   
+
+}
