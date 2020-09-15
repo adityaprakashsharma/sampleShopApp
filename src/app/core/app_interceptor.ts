@@ -49,7 +49,7 @@ export class AppInterceptor implements HttpInterceptor {
               if(evt instanceof HttpResponse){
 //                const modEvent = evt.body.filter( elem => elem.category === "electronics");
                 const modEvent = evt.clone({body: evt.body.filter( elem => elem.category === "electronics")})  
-                return modEvent;
+                return evt;
               }
              }
           ),

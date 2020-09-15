@@ -1,29 +1,123 @@
-.card-content {
+
+$mobile-width: 600px;
+.home-banner{
+    height: 400px;
+    background: linear-gradient(to right, #17adad, #18b8bf);
     display: flex;
     justify-content: center;
-
-    img {
-        width: 15%;   
+    align-items: center;
+    .banner-img {
+        flex: 1;
+        padding: 0px 16px;
+        img {
+            height: auto;
+            width: 100%;
+        }
+    }
+    .home-banner-text {
+        margin: auto;
+        flex: 1;
+        /* text-align: center; */
+        /* height: 50%; */
+        /* position: absolute; */
+        /* width: 40%; */
+        display: flex;
+        flex-direction: column;
+        /* justify-content: center; */
+        align-items: center;
+        color: #fff;
+        h3 {
+            font-size: 30px;
+        }
+        h5 {
+            font-size: 16px;
+        }
+        .banner-text-btn {
+            line-height: 24px;
+            font-size: 20px;
+            background: red;
+            border: none;
+            outline: none;
+            padding: 8px;
+            margin: 8px;
+            width: 150px;
+            color: #fff;
+            opacity: 1;
+            z-index: 6666;
+            font-weight: 500;
+            font-family: Roboto, "Helvetica Neue", sans-serif;
+            box-shadow: 2px 2px 1px rgb(51,6,6, .7);
+            transition: all .5s ease-in-out;
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 4px 4px 2px rgb(51,6,6, .9);
+            }
+        }
+    }
+    @media screen and (max-width: $mobile-width) {
+        flex-direction: column;
         height: auto;
-        margin: 8px;
-        padding: 16px;
+        .banner-img {
+            padding: 0px;
+        }
     }
-
-    .card-content-text {
-        margin: 8px;
-        padding: 16px;
-        text-align: justify;
-    }
-
 
 }
-
-.card-content-action-btn {
-    text-align: end;
-    margin: 8px;
-    padding: 16px;
-
-    button {
-        border: 1px solid blue;
+.card-display-container {
+    .spinner-class {
+        margin: auto;
     }
+    display: flex;
+    flex-wrap: wrap;
+    .display-card{
+        margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        margin: 8px auto;
+        img {
+            margin: 0px auto;
+        }
+        .card-content {
+            display: flex;
+            justify-content: center;
+        
+            .card-content-text {
+                margin: 8px;
+                padding: 16px;
+                text-align: justify;
+            }
+        
+        
+        }
+        
+        .card-content-action-btn {
+            text-align: end;
+            margin-left: 8px;
+            padding: 16px;
+            position: absolute;
+            bottom: 0;
+            box-sizing: border-box;
+            
+            button {
+                border: 1px solid #ff003b;
+                background: #ff003b;
+                color: #fff;
+                box-shadow: 2px 2px 1px rgb(0,0,0,.6);
+                transition: all .5s ease-in-out;
+                &:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 4px 4px 2px rgb(51,6,6, .9);
+                }
+    
+            }
+        }
+    }
+
+    @media screen and (max-width: $mobile-width) {
+        .display-card {
+            width: 100%;
+        }
+    }
+
 }
