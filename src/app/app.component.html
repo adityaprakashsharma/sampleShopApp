@@ -1,10 +1,10 @@
 <mat-toolbar color="primary" class="nav-bar">
-  <button (click)="toggleNav()" mat-icon-button class="example-icon navbar-icon" aria-label="Example icon-button with menu icon">
+  <button (click)="toggleNav()" mat-icon-button class="navbar-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
   <span>My App</span>
-  <div class="example-spacer navbar-links"  (click)="toggleNav()">
-    <button  mat-icon-button *ngIf="navToggle" class="example-icon navbar-icon-close" aria-label="Example icon-button with menu icon">
+  <div  [className]="navToggle ? 'navbar-links active' : 'navbar-links inactive'" (click)="toggleNav()">
+    <button  mat-icon-button  class="example-icon navbar-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>close</mat-icon>
     </button>
     <button mat-button routerLink="/">Home</button>  
