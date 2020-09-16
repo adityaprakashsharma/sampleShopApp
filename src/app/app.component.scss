@@ -3,3 +3,57 @@
     display: flex;
     justify-content: flex-end;
   }
+.nav-bar {
+    display: flex;
+    justify-content: space-around;
+
+        .navbar-icon-close{
+            display: none;
+        }
+        @media screen and (max-width: 600px){
+            justify-content: flex-start;
+            
+            .navbar-links{
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                justify-content: space-evenly;
+                transform: translateX(-100%);
+                top: 0;
+                left: 0; 
+                height: 100%;
+                width: 50%;
+                align-items: center;
+                z-index: 666;
+                background: #673ab7;
+                transition: all 1s ease-in;
+                animation: toggleNavIn 2s ;
+                .navbar-icon-close{
+                    display: block;
+                }
+        
+            }
+
+        
+        }
+        
+    
+    
+
+    
+    &:hover{
+        .navbar-links{
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes toggleNavIn {
+        from{transform: translateX(-100%)}
+        to{transform: translateX(0)}
+    }
+    @keyframes toggleNavOut {
+        from{transform: translateX(0)}
+        to{transform: translateX(-100%)}
+    }
+}
+
