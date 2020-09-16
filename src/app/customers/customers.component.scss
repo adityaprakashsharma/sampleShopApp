@@ -2,39 +2,36 @@
 .contianer{
     display: flex;
     justify-content: center;
-    padding: 8px;
     position: relative;
-    @media screen and (max-width: 425px) {
-            justify-content: inherit;
-    }
+    /* width: 100%; */
+    /* align-items: center; */
+    box-sizing: border-box;
+    padding: 8px;
     &::after {
         position: absolute;
         content: "User Details";
-        z-index: 666;
         background: #f8f8f8;
         height: 16px;
-        padding: 8px 8px;
-        @media screen and (max-width: 425px) {
-            left: 50%;
-    }
+        padding: 4px;
+
     }
   
     .form-contianer {
         border: 1px solid #000;
-        margin: 16px;
+        margin: 16px 8px;
         display: flex;
         flex-direction: column;
         background-color: #f8f8f8;
-        padding: 16px;
-
-
+        widows: auto;
+        @media screen and (max-width: 600px){
+            width: 98%;
+        }
 
 
         .form-field {
-            width: 320px;
+            padding: 8px;
             .mat-form-field {
                 width: 100%;
-                margin: 0 16px;
             }
 
             &.form-field-btn {
