@@ -14,24 +14,36 @@
         </div>
     </div>
     <div class="card-display-container">
-        <mat-spinner *ngIf="products.length === 0" class="spinner-class"></mat-spinner>
 
-        <mat-card *ngFor="let product of products" class="display-card">
-            <mat-card-header>
-                <mat-card-title>{{product.title}}</mat-card-title>
-                <mat-card-subtitle>{{product.price}} $
-                </mat-card-subtitle>
-            </mat-card-header>
-            <img  mat-card-md-image src="{{ product.image }}" />
-            <mat-card-content class="card-content">
-                
-                <p class="card-content-text">
-                    {{product.description}}
-                </p>
-            </mat-card-content>
-            <mat-card-actions class="card-content-action-btn">
-          <button mat-button > Buy product</button>
-        </mat-card-actions>
-        </mat-card>
+        <mat-spinner *ngIf="products.length === 0" class="spinner-class"></mat-spinner>
+        <div class="category-container">
+            <mat-select (selectionChange)="showSelectedCategory($event)" class="display-category"  *ngIf="category.length !== 0" [(value)]="selected">
+                <mat-option value="showAll">Show All</mat-option>
+                <mat-option  value="{{product}}" *ngFor="let product of category">
+                  {{product}}
+                </mat-option>
+            </mat-select>
+        </div>
+        <div class="card-container">
+            <mat-card *ngFor="let product of products" class="display-card">
+
+                <mat-card-header>
+                    <mat-card-title>{{product.title}}</mat-card-title>
+                    <mat-card-subtitle>{{product.price}} $
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <img  mat-card-md-image src="{{ product.image }}" />
+                <mat-card-content class="card-content">
+                    
+                    <p class="card-content-text">
+                        {{product.description}}
+                    </p>
+                </mat-card-content>
+                <mat-card-actions class="card-content-action-btn">
+              <button mat-button > Buy product</button>
+            </mat-card-actions>
+            </mat-card>
+        </div>
+
     </div>
 </div>

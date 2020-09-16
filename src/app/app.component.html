@@ -3,8 +3,8 @@
     <mat-icon>menu</mat-icon>
   </button>
   <span>My App</span>
-  <div class="example-spacer navbar-links" *ngIf="navToggle" (click)="toggleNav()">
-    <button  mat-icon-button class="example-icon navbar-icon-close" aria-label="Example icon-button with menu icon">
+  <div class="example-spacer navbar-links"  (click)="toggleNav()">
+    <button  mat-icon-button *ngIf="navToggle" class="example-icon navbar-icon-close" aria-label="Example icon-button with menu icon">
       <mat-icon>close</mat-icon>
     </button>
     <button mat-button routerLink="/">Home</button>  

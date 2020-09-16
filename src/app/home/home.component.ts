@@ -10,13 +10,31 @@ import { HttpResponse } from '@angular/common/http';
 export class HomeComponent implements OnInit {
 
   products = [];
+  category = [];
+  originalDataSet = [];
+  selected = "showAll"
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
     this.apiService.get().subscribe( (data: any[]) => {
       console.log("Data :", data);
+      this.originalDataSet = data;
       this.products = data ;
+      this.products.forEach(elem => {if(!(this.category.indexOf(elem.category) >-1)){this.category.push(elem.category)}});
+      console.log(this.category)
     })
+  }
+
+
+
+  showSelectedCategory(evt){
+    console.log(evt)
+    if(evt.value === "showAll"){
+      this.products = this.originalDataSet;
+    }else {
+      this.products = this.originalDataSet.filter(elem => elem.category === evt.value);
+    }
+
   }
 
 }
