@@ -10,7 +10,7 @@ export class CartserviceService {
 //  cart = this.cartObject.asObservable();
   
   constructor() { 
-    this.getLocalData();
+//    this.getLocalData();
   }
 
   private saveDataToLocal(){
