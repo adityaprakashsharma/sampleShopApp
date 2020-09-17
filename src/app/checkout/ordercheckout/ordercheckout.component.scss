@@ -1,0 +1,21 @@
+.checkout-container{
+    display: flex;
+    .mat-stepper-vertical {
+        margin-top: 8px;
+    }
+      
+    .mat-form-field {
+        margin-top: 16px;
+    }
+
+    .user-details-container {
+        flex: 1;
+    }
+    .order-details-container {
+        flex: 1;
+    }
+
+    @media screen  and (max-width: 600px) {
+        flex-direction: column-reverse;
+    }
+}

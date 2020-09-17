@@ -16,13 +16,15 @@ import { AppInterceptor } from './core/app_interceptor';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
-import { MatBadgeModule } from '@angular/material/badge';  
+import { MatBadgeModule } from '@angular/material/badge';
+import { AddressComponent } from './address/address.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    AddressComponent,
   ],
   imports: [
     BrowserModule,

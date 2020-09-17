@@ -9,13 +9,23 @@ export class CartserviceService {
   cartObject = new BehaviorSubject([]);
 //  cart = this.cartObject.asObservable();
   
-  constructor() { }
+  constructor() { 
+    this.getLocalData();
+  }
+
+  private saveDataToLocal(){
+    localStorage.setItem("cart-data",JSON.stringify(this.cart));
+  }
+
+
+  
   public getCartObject(){
     this.cartObject.next(this.cart)
   }
 
   public addCartObject(cartObject) {
     this.cart.push(cartObject);
+    this.saveDataToLocal();
     this.cartObject.next([...this.cart]);
   }
 
@@ -30,7 +40,16 @@ export class CartserviceService {
   public removeFromCart(cardObject){
       console.log("Cart Value = >", cardObject);
       console.log("Cart Object =>> ",this.cart);
-      this.cart.forEach((elem,index) => { if(elem === cardObject){console.log("We are here");this.cart.splice(index,1)}})
+      this.cart.forEach((elem,index) => { if(elem === cardObject){console.log("We are here");this.cart.splice(index,1)}});
+      this.saveDataToLocal();
       this.cartObject.next(this.cart);
   }
+
+  private getLocalData(){
+    let cartDataOnLoad = window.localStorage.getItem("cart-data");
+    if(cartDataOnLoad.length > 0){
+      this.cartObject.next(JSON.parse(cartDataOnLoad));
+    }
+  }
+  
 }

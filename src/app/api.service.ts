@@ -193,8 +193,8 @@ export class ApiService {
 
   
   public get() {
-//    return of(this.productsData);
-    return this.httpClient.get(this.SERVER_URL);
+    return of(this.productsData);
+//    return this.httpClient.get(this.SERVER_URL);
   }
 
 

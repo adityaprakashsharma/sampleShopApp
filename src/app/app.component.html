@@ -16,11 +16,12 @@
     <!-- <span class="material-icons" [matBadge]="cartItems" matBadgeColor="warn" class="shopping_cart">
       shopping_cart
     </span> -->
-    <span class="material-icons shopping_cart" [matBadge]="cartItems" matBadgeColor="accent" >
+    <span class="material-icons " [matBadge]="cartItems" matBadgeColor="accent" routerLink="/checkout">
       shopping_cart
       </span>
   </div>
 
 </mat-toolbar>
-
-  <router-outlet></router-outlet>
+  <!-- <div [className]="navToggle ? 'content-display-container inactive':'content-display-container active '"> -->
+    <router-outlet></router-outlet>
+  <!-- </div> -->
