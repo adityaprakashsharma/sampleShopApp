@@ -16,7 +16,7 @@ import { AppInterceptor } from './core/app_interceptor';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
-  
+import { MatBadgeModule } from '@angular/material/badge';  
 
 @NgModule({
   declarations: [
@@ -37,7 +37,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatFormFieldModule,
     FormsModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatBadgeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor , multi: true}

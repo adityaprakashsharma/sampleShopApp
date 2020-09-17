@@ -12,6 +12,14 @@
     <button mat-button routerLink="/customers">Customers</button>
     <button mat-button routerLink="/orders">Orders</button>
   </div> 
+  <div>
+    <!-- <span class="material-icons" [matBadge]="cartItems" matBadgeColor="warn" class="shopping_cart">
+      shopping_cart
+    </span> -->
+    <span class="material-icons shopping_cart" [matBadge]="cartItems" matBadgeColor="accent" >
+      shopping_cart
+      </span>
+  </div>
 
 </mat-toolbar>
 

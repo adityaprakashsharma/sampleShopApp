@@ -10,8 +10,13 @@
         .navbar-icon{
             display: none;
         }
+        .navbar-links{
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+        }
         @media screen and (max-width: 600px){
-            justify-content: flex-start;
+            justify-content: space-between;
             .navbar-icon{
                 display: block;
             }
@@ -51,6 +56,10 @@
     @keyframes toggleNavIn {
         from{transform: translateX(-100%)}
         to{transform: translateX(0)}
+    }
+
+    .shopping_cart {
+        padding: 8px 8px;
     }
 
 }

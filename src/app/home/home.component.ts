@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 import { HttpResponse } from '@angular/common/http';
+import { CartserviceService } from '../service/cartservice.service';
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,8 @@ export class HomeComponent implements OnInit {
   products = [];
   category = [];
   originalDataSet = [];
-  selected = "showAll"
-  constructor(private apiService: ApiService) { }
+  selected = "showAll";
+  constructor(private apiService: ApiService, private cartService: CartserviceService) { }
 
   ngOnInit(): void {
     this.apiService.get().subscribe( (data: any[]) => {
@@ -35,6 +36,15 @@ export class HomeComponent implements OnInit {
       this.products = this.originalDataSet.filter(elem => elem.category === evt.value);
     }
 
+  }
+
+  addToCart(event){
+    console.log("Object to add to Cart",event);
+    console.log(this.cartService.addCartObject(event));
+  }
+
+  removeFromCart(event){
+    this.cartService.removeFromCart(event);
   }
 
 }
