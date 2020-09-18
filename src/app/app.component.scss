@@ -26,6 +26,10 @@
             width: 100%;
             display: flex;
             justify-content: flex-end;
+            button:last-child {
+                background: red;
+                border: 1px solid red;
+            }
         }
         @media screen and (max-width: 600px){
             justify-content: space-between;
@@ -54,6 +58,7 @@
                 &.inactive {
                     transform: translateX(-100%);
                 }
+
             }
 
         
@@ -78,5 +83,6 @@
 .content-display-container {
     position: absolute;
     top: 68px;
+    width: 100%;
 }
 

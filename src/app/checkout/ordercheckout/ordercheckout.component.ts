@@ -30,4 +30,8 @@ export class OrdercheckoutComponent implements OnInit {
     })
   }
 
+  deleteFromCart (event){
+    this.cartService.removeFromCart(event);
+  }
+
 }

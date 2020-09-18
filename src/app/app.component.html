@@ -2,23 +2,25 @@
   <button (click)="toggleNav()" mat-icon-button class="navbar-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
-  <span>My App</span>
+  <span routerLink="/">Shop&Go</span>
   <div  [className]="navToggle ? 'navbar-links active' : 'navbar-links inactive'" (click)="toggleNav()">
     <button  mat-icon-button  class="example-icon navbar-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>close</mat-icon>
     </button>
     <button mat-button routerLink="/">Home</button>  
-    <button mat-button routerLink="/about">About</button>
     <button mat-button routerLink="/customers">Customers</button>
     <button mat-button routerLink="/orders">Orders</button>
+    <button mat-button routerLink="/about">Login</button>
   </div> 
   <div>
     <!-- <span class="material-icons" [matBadge]="cartItems" matBadgeColor="warn" class="shopping_cart">
       shopping_cart
     </span> -->
-    <span class="material-icons " [matBadge]="cartItems" matBadgeColor="accent" routerLink="/checkout">
-      shopping_cart
+    <button  mat-button class="shopping-cart-btn">
+      <span class="material-icons " [matBadge]="cartItems" matBadgeColor="accent" routerLink="/checkout">
+        shopping_cart
       </span>
+    </button>
   </div>
 
 </mat-toolbar>
