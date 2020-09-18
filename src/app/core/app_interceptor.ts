@@ -48,7 +48,7 @@ export class AppInterceptor implements HttpInterceptor {
               map((evt: HttpEvent<any>) => {
               if(evt instanceof HttpResponse){
 //                const modEvent = evt.body.filter( elem => elem.category === "electronics");
-                const modEvent = evt.clone({body: evt.body.filter( elem => elem.category === "electronics")})  
+//                const modEvent = evt.clone({body: evt.body.filter( elem => elem.category === "electronics")})  
                 return evt;
               }
              }

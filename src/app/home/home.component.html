@@ -28,8 +28,8 @@
             <mat-card *ngFor="let product of products" class="display-card">
 
                 <mat-card-header>
-                    <mat-card-title>{{product.title}}</mat-card-title>
-                    <mat-card-subtitle>{{product.price}} $
+                    <mat-card-title>{{product.name}}</mat-card-title>
+                    <mat-card-subtitle>{{product.net_price}} $
                     </mat-card-subtitle>
                 </mat-card-header>
                 <img  mat-card-md-image src="{{ product.image }}" />

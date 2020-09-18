@@ -9,7 +9,7 @@ import { retry, catchError, tap, multicast } from 'rxjs/operators';
 })
 export class ApiService {
 
-  private SERVER_URL = "https://fakestoreapi.com/products/";
+  private SERVER_URL = "https://fakerapi.it/api/v1/products?_quantity=50";
   private productsData = [
     {
       "id": 1,
@@ -193,8 +193,8 @@ export class ApiService {
 
   
   public get() {
-    return of(this.productsData);
-//    return this.httpClient.get(this.SERVER_URL);
+//    return of(this.productsData);
+    return this.httpClient.get(this.SERVER_URL);
   }
 
 

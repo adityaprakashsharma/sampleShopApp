@@ -1,5 +1,6 @@
 .checkout-container{
     display: flex;
+    height: 100%;
     .mat-stepper-vertical {
         margin-top: 8px;
     }
@@ -11,11 +12,82 @@
     .user-details-container {
         flex: 1;
     }
+
+
+
     .order-details-container {
+        list-style: none;
         flex: 1;
+        padding: 8px;
+        .order-details-list {
+            display: flex;
+            list-style: none;
+            flex-direction: column;
+            padding: 0px;
+            .order-detail-item {
+                display: flex;
+                height: 100%;
+                border-bottom: 1px solid green;
+                margin: 1px;
+                &:first-child {
+                    border-top: 1px solid green;
+                }
+                .order-img {
+                    width: 100%;
+                    display: flex;
+                    flex: 1;
+                    align-items: center;
+                    img {
+                        height: 100%;
+                        width: inherit;
+                        object-fit: contain;
+                    }
+    
+                }
+                .order-details {
+                    display: flex;
+                    flex-direction: column;
+                    /* align-items: center; */
+                    flex: 2;
+                    margin: 8px 24px;
+                   
+                    p{
+                        margin-top: 0px;
+                    }
+                    a{
+                        text-decoration: none ;
+                    }
+                    .item-action-btn {
+                        display: flex;
+                        justify-content: space-between;
+                        button {
+                            margin: 8px;
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+    .purchase-now-btn {
+        position: sticky;
+        top: 0px;
+        display: none;
+        text-align: center;
+        button {
+            margin: 8px auto;
+            width: 60%;
+        }
     }
 
     @media screen  and (max-width: 600px) {
         flex-direction: column-reverse;
+        height: auto;
+        .purchase-now-btn {
+            display: block;
+        }
     }
 }

@@ -39,17 +39,31 @@
           </mat-vertical-stepper>
     </div>
     <div class="order-details-container">
-        <ul>
-            <li *ngFor="let orderItem of checkoutOrderList">
-                <img src="{{orderItem.title}}">
-                <p>
-                    {{orderItem.title}}
-                </p>
-                <p>
-                    {{orderItem.price}}
-                </p>
+        <ul class="order-details-list">
+            <li *ngFor="let orderItem of checkoutOrderList" class="order-detail-item">
+                <div class="order-img">
+                    <img src="{{orderItem.image}}">
+                </div>
+                <div class="order-details">
+                    <p>
+                        {{orderItem.name}}
+                    </p>
+                    <p>
+                        {{orderItem.price}}
+                    </p>
+                    <!-- <a href="#" class="order-btn">
+                        Delete
+                    </a> -->
+                    <div class="action-btn" class="item-action-btn">
+                        <button mat-raised-button>Delete</button>
+                        <button mat-raised-button>Save for Later</button>
+                    </div>
+                </div>
             </li>
         </ul>
+    </div>
+    <div class="purchase-now-btn">
+        <button  mat-raised-button class="buy-now-btn">Buy Now</button>
     </div>
 </div>
 

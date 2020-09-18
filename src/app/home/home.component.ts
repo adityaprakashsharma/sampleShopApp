@@ -19,8 +19,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.apiService.get().subscribe( (data: any[]) => {
       console.log("Data :", data);
-      this.originalDataSet = data;
-      this.products = data ;
+      this.originalDataSet = data['data'];
+      this.products = data['data'] ;
       this.products.forEach(elem => {if(!(this.category.indexOf(elem.category) >-1)){this.category.push(elem.category)}});
       console.log(this.category)
     })
