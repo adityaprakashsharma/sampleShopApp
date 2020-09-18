@@ -12,7 +12,7 @@ export class OrdercheckoutComponent implements OnInit {
   isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
-  checkoutOrderList;
+  checkoutOrderList = [];
 
   constructor(private _formBuilder: FormBuilder, private cartService: CartserviceService) {}
 
@@ -25,7 +25,15 @@ export class OrdercheckoutComponent implements OnInit {
     });
     this.cartService.cartObject.subscribe((data) => {
       if(data){
+        data.forEach(elem => {
+          if(!(this.checkoutOrderList.indexOf(elem) > -1)){
+            this.checkoutOrderList.push(elem);
+          }else {
+            console.log("Number of values already ===> ",this.checkoutOrderList.filter(elem => this.checkoutOrderList.indexOf(elem) >-1))
+          }
+
         this.checkoutOrderList = data
+      })
       }
     })
   }

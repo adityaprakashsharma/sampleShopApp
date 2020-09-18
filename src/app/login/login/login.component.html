@@ -1,0 +1,27 @@
+
+<form action="" #loginForm="ngForm"  class="login-form-container" (ngSubmit)="onSubmit()">
+ 
+    <div class="username-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Username</mat-label>
+            <input  matInput placeholder="Username" required minlength="6"  [(ngModel)]="username" name="username" >
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+    </div>
+    <div class="password-container">
+        <mat-form-field appearance="outline">
+            <mat-label>Password</mat-label>
+            <input matInput type="password" placeholder="password" required minlength="8"  [(ngModel)]="password" name="password" >
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
+    </div>
+    <div class="action-btn-container">
+        <mat-slide-toggle
+        class="example-margin" [(ngModel)]="isValidUser" name="remember"
+       >
+            Remember me!
+        </mat-slide-toggle>
+        <button mat-raised-button>Login</button>
+        <a>Sign-up</a>
+    </div>
+</form>

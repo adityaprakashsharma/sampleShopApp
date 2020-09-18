@@ -9,7 +9,8 @@ const routes: Routes = [
   { path: 'about', component: AboutComponent },
   { path: 'customers', loadChildren: () => import('./customers/customers.module').then(m => m.CustomersModule) },
   { path: 'orders', loadChildren: () => import('./orders/orders.module').then(m => m.OrdersModule) },
-  { path: 'checkout', loadChildren: () => import ('./checkout/checkout.module').then(m => m.CheckoutModule)}
+  { path: 'checkout', loadChildren: () => import ('./checkout/checkout.module').then(m => m.CheckoutModule)},
+  { path: 'login', loadChildren: () => import('./login/login.module').then( m =>m.LoginModule)}
   
 ];
 
