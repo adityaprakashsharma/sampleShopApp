@@ -26,13 +26,13 @@
         </div>
         <div class="card-container">
             <mat-card *ngFor="let product of products" class="display-card">
-
-                <mat-card-header>
+                <!-- <img  mat-card-md-image src="{{ product.image }}" class="card-image"/> -->
+                <div class="img" style="background-image: url({{product.image}}) ; background-size: cover;"></div>
+                <mat-card-header class="display-card-header">
                     <mat-card-title>{{product.name}}</mat-card-title>
                     <mat-card-subtitle>{{product.net_price}} $
                     </mat-card-subtitle>
                 </mat-card-header>
-                <img  mat-card-md-image src="{{ product.image }}" />
                 <mat-card-content class="card-content">
                     
                     <p class="card-content-text">

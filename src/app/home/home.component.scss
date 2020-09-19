@@ -87,20 +87,32 @@ div{
             display: flex;
             flex-wrap: wrap;
             .display-card{
-                margin-top: 10px;
                 display: flex;
                 flex-direction: column;
                 flex: 30%;
-                margin: 8px auto;
-                img {
+                height: 400px;
+                margin: 4px 4px;
+                /* margin: 4px 4px; */
+                padding: 0px;
+                border: 1px solid #efefef;
+                box-sizing: border-box;
+                box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+                .display-card-header {
+                    display: flex;
+                    flex-direction: row;
+                    height: 60px;
+                    margin: 8px;
+                }
+                .img {
                     margin: 0px auto;
+                    height: 160px;
+                    width: 100%;
                 }
                 .card-content {
                     display: flex;
                     justify-content: center;
-                
+                    padding: 0px 16px;
                     .card-content-text {
-                        margin: 8px;
                         padding: 16px;
                         text-align: justify;
                     }
@@ -111,10 +123,15 @@ div{
                 .card-content-action-btn {
                     text-align: end;
                     margin-left: 8px;
-                    padding: 16px;
+                    padding: 0px 16px;
                     position: absolute;
                     bottom: 0;
                     box-sizing: border-box;
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    height: 60px;
+
                     
                     button {
                         border: 1px solid #673ab7;
@@ -122,6 +139,7 @@ div{
                         color: #fff;
                         box-shadow: 2px 2px 1px rgb(0,0,0,.6);
                         transition: all .5s ease-in-out;
+                        height: 42px;
                         &:hover {
                             transform: translateY(-2px);
                             box-shadow: 4px 4px 2px rgb(51,6,6, .9);
@@ -133,7 +151,14 @@ div{
     
         }
     
-    
+        @media screen and (max-width: 768px) and (min-width: $mobile-width){
+            .card-container {
+                .display-card {
+                    
+                    flex: 40%
+                }
+            }
+        }
         @media screen and (max-width: $mobile-width) {
             .card-container {
                 .display-card {
