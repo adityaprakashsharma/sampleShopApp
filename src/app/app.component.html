@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="nav-bar">
+<mat-toolbar [appStickyHeader]='yellow' color="primary" class="nav-bar">
   <button (click)="toggleNav()" mat-icon-button class="navbar-icon" aria-label="Example icon-button with menu icon">
     <mat-icon>menu</mat-icon>
   </button>
@@ -8,6 +8,7 @@
       <mat-icon>close</mat-icon>
     </button>
     <button mat-button routerLink="/">Home</button>  
+    <button mat-button routerLink="/about">About</button>
     <button mat-button routerLink="/customers">Customers</button>
     <button mat-button routerLink="/orders">Orders</button>
     <button mat-button routerLink="/login">Login</button>
@@ -24,6 +25,11 @@
   </div>
 
 </mat-toolbar>
+<div class="category-panel">
+  <div class="category-panel--item">
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+  </div>
+</div>
   <div class= "content-display-container">
     <router-outlet></router-outlet>
   </div>

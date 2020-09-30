@@ -72,6 +72,8 @@ div{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        margin: 0px auto;
+        width: 96%;
         .category-container {
             display: flex;
             justify-content: flex-end;
@@ -152,6 +154,7 @@ div{
         }
     
         @media screen and (max-width: 768px) and (min-width: $mobile-width){
+            width: 100%;
             .card-container {
                 .display-card {
                     
@@ -160,6 +163,7 @@ div{
             }
         }
         @media screen and (max-width: $mobile-width) {
+            width: 100%;
             .card-container {
                 .display-card {
                     width: 100%;

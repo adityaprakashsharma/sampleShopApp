@@ -8,7 +8,7 @@ import { retry, catchError, tap, multicast } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class ApiService {
-
+  productList:Observable<any>;
   private SERVER_URL = "https://fakerapi.it/api/v1/products?_quantity=50";
   private productsData = [
     {
@@ -194,9 +194,28 @@ export class ApiService {
   
   public get() {
 //    return of(this.productsData);
-    return this.httpClient.get(this.SERVER_URL);
+    this.productList = this.httpClient.get(this.SERVER_URL);
+    let newP = this.getProductList();
+    // if(newP.length === 0){
+    //   this.productList = this.httpClient.get(this.SERVER_URL);
+    //   this.productsData = this.productsData['data'];
+    //   console.log("Product Data =>", this.productsData)
+    // }else {
+    //   let newP = this.getProductList();
+    //   this.productList = of(newP);
+    // }
+    return this.productList;
   }
 
+
+  public getProductList() {
+//    console.log("product List ==> ",this.productsData)
+    return this.productsData;
+  }
+
+  public setProductData(dataList) {
+    this.productsData = dataList;
+  }
 
 
   public sendGetRequest() {

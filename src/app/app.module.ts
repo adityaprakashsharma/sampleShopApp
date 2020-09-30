@@ -18,6 +18,11 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSelectModule } from '@angular/material/select';
 import { MatBadgeModule } from '@angular/material/badge';
 import { AddressComponent } from './address/address.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
+import { AuthGuard } from './guard/auth.guard';
+import { CustomerGuard } from './guard/customer.guard';
+import { CurrenyLocalPipe } from './pipe/curreny-local.pipe';
+import { StickyHeaderDirective } from './sticky-header.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +30,9 @@ import { AddressComponent } from './address/address.component';
     HomeComponent,
     AboutComponent,
     AddressComponent,
+    ProductDetailsComponent,
+    CurrenyLocalPipe,
+    StickyHeaderDirective,
   ],
   imports: [
     BrowserModule,
@@ -40,10 +48,13 @@ import { AddressComponent } from './address/address.component';
     FormsModule,
     MatSidenavModule,
     MatSelectModule,
-    MatBadgeModule
+    MatBadgeModule,
+    
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor , multi: true}
+    { provide: HTTP_INTERCEPTORS, useClass: AppInterceptor , multi: true},
+    AuthGuard,
+    CustomerGuard
   ],
   bootstrap: [AppComponent]
 })

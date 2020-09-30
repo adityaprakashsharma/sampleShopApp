@@ -24,13 +24,13 @@
                 </mat-option>
             </mat-select>
         </div>
-        <div class="card-container">
-            <mat-card *ngFor="let product of products" class="display-card">
+        <div class="card-container" >
+            <mat-card *ngFor="let product of products" class="display-card" [routerLink]="['/products',product.ean]">
                 <!-- <img  mat-card-md-image src="{{ product.image }}" class="card-image"/> -->
                 <div class="img" style="background-image: url({{product.image}}) ; background-size: cover;"></div>
                 <mat-card-header class="display-card-header">
                     <mat-card-title>{{product.name}}</mat-card-title>
-                    <mat-card-subtitle>{{product.net_price}} $
+                    <mat-card-subtitle>{{product.net_price |  currencyLocal: 'inr' | currency:'INR'}} 
                     </mat-card-subtitle>
                 </mat-card-header>
                 <mat-card-content class="card-content">

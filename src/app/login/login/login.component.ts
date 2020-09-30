@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { Login } from '../login';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -7,18 +8,18 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 })
 export class LoginComponent implements OnInit {
 
-  password: string;
-  username: string;
   isValidUser: boolean = false;
+
+  loginCred = new Login('', '', false)
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onSubmit(){
-    console.log("Username => ", this.username);
-    console.log("Password => ", this.password);
-    console.log("RememberMe => ", this.isValidUser)
+  onSubmit(event){
+    console.log("Username => ", event);
+    // console.log("Password => ", this.password);
+    // console.log("RememberMe => ", this.isValidUser)
   }
 }

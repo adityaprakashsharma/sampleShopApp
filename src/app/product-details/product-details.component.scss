@@ -1,0 +1,19 @@
+.product-detail-container{
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    height: 100%;
+    .detail-image-container {
+        width: 300px;
+        height: 300px;
+    }
+    .detail-content {
+        width: 300px;
+        height: 300px ;
+    }
+
+    // @media screen and (max-width: 768px) {
+    //     flex-direction: column;
+    //     width: 100%;
+    // }
+}

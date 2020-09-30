@@ -22,7 +22,8 @@ export class HomeComponent implements OnInit {
       this.originalDataSet = data['data'];
       this.products = data['data'] ;
       this.products.forEach(elem => {if(!(this.category.indexOf(elem.category) >-1)){this.category.push(elem.category)}});
-      console.log(this.category)
+      this.apiService.setProductData(this.products)
+      console.log(this.originalDataSet)
     })
   }
 

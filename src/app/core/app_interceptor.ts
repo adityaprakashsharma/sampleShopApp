@@ -33,9 +33,10 @@ export class AppInterceptor implements HttpInterceptor {
         //       console.log('---&gt; status:', evt.status);
         //       console.log('---&gt; filter:', req.params.get('filter'));
         //     }
-        //   })
+        // //   })
         const modifiedReq = req.clone({
-            setHeaders: { "content-type": "application/json"}
+            headers: req.headers.set('Content-Type',['application/json'])
+
         })
           const cachedResponse = this.cache.get(req.url);
           if(cachedResponse){

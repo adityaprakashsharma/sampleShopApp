@@ -1,27 +1,55 @@
 
-<form action="" #loginForm="ngForm"  class="login-form-container" (ngSubmit)="onSubmit()">
- 
-    <div class="username-container">
-        <mat-form-field appearance="outline">
-            <mat-label>Username</mat-label>
-            <input  matInput placeholder="Username" required minlength="6"  [(ngModel)]="username" name="username" >
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          </mat-form-field>
-    </div>
-    <div class="password-container">
-        <mat-form-field appearance="outline">
-            <mat-label>Password</mat-label>
-            <input matInput type="password" placeholder="password" required minlength="8"  [(ngModel)]="password" name="password" >
-            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          </mat-form-field>
-    </div>
-    <div class="action-btn-container">
-        <mat-slide-toggle
-        class="example-margin" [(ngModel)]="isValidUser" name="remember"
-       >
-            Remember me!
-        </mat-slide-toggle>
-        <button mat-raised-button>Login</button>
-        <a>Sign-up</a>
-    </div>
-</form>
+<div class="login-wrapper">
+    <form action="" #loginForm="ngForm"  class="login-form-container" (ngSubmit)="onSubmit(loginForm)">
+        <div class="username-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Username</mat-label>
+                <input  matInput placeholder="Username"  required minlength="6" #username="ngModel" [(ngModel)]="loginCred.username" name="username" >
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            </mat-form-field>
+            <div *ngIf="username.invalid && (username.dirty || username.touched)"
+                    class="alert alert-danger">
+    
+                <div *ngIf="username.errors.required">
+                    Name is required.
+                </div>
+                <div *ngIf="username.errors.minlength">
+                    Name must be at least 6 characters long.
+                </div>
+                <div *ngIf="username.errors.forbiddenName">
+                    Name cannot be Bob.
+                </div>
+            </div>
+        </div>
+        <div class="password-container">
+            <mat-form-field appearance="outline">
+                <mat-label>Password</mat-label>
+                <input matInput  [(ngModel)]="loginCred.password" #password="ngModel" placeholder="password" required minlength="8"  name="password" >
+                <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+              </mat-form-field>
+              <div *ngIf="password.invalid && (password.dirty || password.touched)"
+              class="alert alert-danger">
+    
+                    <div *ngIf="password.errors.required">
+                        Password is required.
+                    </div>
+                    <ul *ngIf="password.errors.minlength">
+                        <li>Password must be at least 8 characters long.</li>
+                        <li>Must contain Special Character</li>
+                    </ul>
+                    <div *ngIf="password.errors.forbiddenName">
+                        Name cannot be Bob.
+                    </div>
+                </div>
+        </div>
+        <div class="action-btn-container">
+            <mat-slide-toggle
+            class="example-margin" [(ngModel)]="isValidUser" name="remember"
+           >
+                Remember me!
+            </mat-slide-toggle>
+            <button mat-raised-button >Login</button>
+            <a>Sign-up</a>
+        </div>
+    </form>
+</div>
